@@ -10,10 +10,19 @@ import ChangeTheme from '../ChangeTheme';
 
 const Header = () => {
   const [openSidebar, setOpenSidebar] = useState(false);
+
+  const toggleOpenModel = () => {
+    setOpenSidebar((prev) => !prev);
+    window.scrollTo({
+      top: 0,
+      left: 0,
+      behavior: 'smooth',
+    });
+  };
   return (
     <>
       {openSidebar && (
-        <CloseBackground close={() => setOpenSidebar(!openSidebar)} />
+        <CloseBackground close={() => toggleOpenModel()} />
       )}
       <Styles.HeaderContainer>
         <Styles.HeaderWrapper>
@@ -29,7 +38,7 @@ const Header = () => {
                 size='25'
                 rounded
                 toggled={openSidebar}
-                toggle={() => setOpenSidebar(!openSidebar)}
+                toggle={() => toggleOpenModel()}
               />
             </Styles.HeaderOptionMenu>
           </Styles.HeaderOptionsContainer>
@@ -41,7 +50,7 @@ const Header = () => {
               size='25'
               rounded
               toggled={openSidebar}
-              toggle={() => setOpenSidebar(!openSidebar)}
+              toggle={() => toggleOpenModel()}
             />
           </Styles.HeaderMenu>
         </Styles.HeaderNavWrapper>

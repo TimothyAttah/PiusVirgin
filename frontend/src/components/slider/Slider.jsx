@@ -9,7 +9,7 @@ const Slider = () => {
     // const next = document.querySelector('.next');
     const totalSlides = slides?.length;
     let index = 0;
-    const duration = 6000;
+    const duration = 10000;
 
     const slide = (direction) => {
       progress();
