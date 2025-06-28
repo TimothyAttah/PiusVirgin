@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import logo from '../../assets/halfLogo.png';
 import Nav from '../nav/Nav';
 import { Twirl as Hamburger } from 'hamburger-react';
@@ -6,12 +6,6 @@ import { AnimatePresence } from 'framer-motion';
 import * as Styles from './HeaderStyles';
 import Sidebar from '../sidebar/Sidebar';
 import { CloseBackground } from '../CloseBackground';
-import {
-  FaFacebookSquare,
-  FaInstagramSquare,
-  FaWhatsappSquare,
-} from 'react-icons/fa';
-import { Link } from 'react-router-dom';
 import ChangeTheme from '../ChangeTheme';
 
 const Header = () => {
@@ -24,21 +18,21 @@ const Header = () => {
       <Styles.HeaderContainer>
         <Styles.HeaderWrapper>
           <h3>Sunday, 15th June 2025</h3>
-          <Styles.HeaderLogo>
+          <Styles.HeaderLogo to='/'>
             <img src={logo} alt='' width='120' />
           </Styles.HeaderLogo>
-          <Styles.HeaderSocialIcons>
-            <Link>
-              <FaInstagramSquare />
-            </Link>
-            <Link>
-              <FaFacebookSquare />
-            </Link>
-            <Link>
-              <FaWhatsappSquare />
-            </Link>
+
+          <Styles.HeaderOptionsContainer>
             <ChangeTheme />
-          </Styles.HeaderSocialIcons>
+            <Styles.HeaderOptionMenu>
+              <Hamburger
+                size='25'
+                rounded
+                toggled={openSidebar}
+                toggle={() => setOpenSidebar(!openSidebar)}
+              />
+            </Styles.HeaderOptionMenu>
+          </Styles.HeaderOptionsContainer>
         </Styles.HeaderWrapper>
         <Styles.HeaderNavWrapper>
           <Nav />
@@ -52,7 +46,9 @@ const Header = () => {
           </Styles.HeaderMenu>
         </Styles.HeaderNavWrapper>
       </Styles.HeaderContainer>
-      <AnimatePresence>{openSidebar && <Sidebar />}</AnimatePresence>
+      <AnimatePresence>
+        {openSidebar && <Sidebar setOpenSidebar={setOpenSidebar} />}
+      </AnimatePresence>
     </>
   );
 };

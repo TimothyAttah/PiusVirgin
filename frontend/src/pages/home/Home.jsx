@@ -1,5 +1,5 @@
+/* eslint-disable react/no-unescaped-entities */
 import Slider from '../../components/slider/Slider';
-import {Link} from 'react-router-dom'
 import * as Styles from './HomeStyles';
 import newsLogo from '../../assets/newsLogo1.jpg'
 import tinubu1 from '../../assets/tinubu1.jpg';

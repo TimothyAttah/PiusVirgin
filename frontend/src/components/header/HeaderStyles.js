@@ -20,7 +20,7 @@ export const HeaderWrapper = styled.div`
   padding: 0 30px;
   padding-bottom: 20px;
 
-  @media screen and (max-width: 570px) {
+  @media screen and (max-width: 750px) {
     flex-direction: column;
     justify-content: center;
     align-items: center;
@@ -28,20 +28,7 @@ export const HeaderWrapper = styled.div`
   }
 `;
 
-export const HeaderSocialIcons = styled.div`
-  display: flex;
-  align-items: center;
-  gap: 20px;
 
-  a {
-    font-size: 25px;
-    color: red;
-  }
-
-  @media screen and (max-width: 570px){
-    display: none;
-  }
-`;
 
 export const HeaderNavWrapper = styled.div`
   height: 100%;
@@ -80,6 +67,30 @@ export const HeaderMenu = styled.div`
     display: flex;
   }
 `;
-// export const HeaderContainer = styled.header``;
+
+export const HeaderOptionMenu = styled.div`
+  display: flex;
+  z-index: 99999 !important;
+  align-items: center;
+  justify-content: center;
+
+  .hamburger-react {
+    z-index: 99999 !important;
+    color: var(--text-color) !important;
+  }
+
+  @media screen and (max-width: 750px) {
+    display: none;
+  }
+`;
+export const HeaderOptionsContainer = styled.div`
+  display: flex;
+  align-items: center;
+  gap: 20px;
+
+  @media screen and (max-width: 750px) {
+    display: none;
+  }
+`;
 // export const HeaderContainer = styled.header``;
 // export const HeaderContainer = styled.header``;

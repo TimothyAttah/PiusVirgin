@@ -9,6 +9,8 @@ import Art from './pages/art/Art';
 import ToursAndExcursion from './pages/excursion/Excursion';
 import Media from './pages/media/Media';
 import Transportation from './pages/transportation/Transportation';
+import About from './pages/about/NewAbout';
+import Contact from './pages/contact/NewContact';
 
 const App = () => {
   return (
@@ -17,17 +19,24 @@ const App = () => {
         <Route element={<Layout />}>
           <Route path='/' element={<Home />} />
           <Route path='/news' element={<News />} />
+          <Route path='/about' element={<About />} />
+          <Route path='/contact' element={<Contact />} />
           <Route path='/services/transportation' element={<Transportation />} />
           <Route path='/services/media' element={<Media />} />
-          <Route path='/services/tours_excursion' element={<ToursAndExcursion />} />
+          <Route
+            path='/services/tours_excursion'
+            element={<ToursAndExcursion />}
+          />
           <Route path='/services/art_gallery' element={<Art />} />
           <Route
             path='/services/human_relation_development'
             element={<HumanRelations />}
           />
-          <Route path='/services/health_management' element={<HealthManagement />} />
+          <Route
+            path='/services/health_management'
+            element={<HealthManagement />}
+          />
           <Route path='/services/web_development' element={<Web />} />
-
         </Route>
       </Routes>
     </>

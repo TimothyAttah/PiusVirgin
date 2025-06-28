@@ -1,7 +1,7 @@
 import styled, { css } from 'styled-components';
-import sliderImg1 from '../../assets/hero-pix-1.png';
-import sliderImg2 from '../../assets/hero-pix-3.jpg';
-import sliderImg3 from '../../assets/hero-pix-2.png';
+import sliderImg1 from '../../assets/train1.jpg';
+import sliderImg2 from '../../assets/tour2.jpg';
+import sliderImg3 from '../../assets/tour1.jpg';
 
 
 
@@ -84,7 +84,8 @@ export const SliderCaption = styled.div`
     margin: 0;
     font-size: 50px;
     animation: text 1s ease forwards;
-    color: var(--text-color);
+    /* color: var(--text-color); */
+    color: red;
   }
 
   p {
@@ -114,7 +115,34 @@ export const SliderCaption = styled.div`
 
   }
 `;
-export const SliderCaptionText = styled.div``;
+export const SliderCaptionText = styled.div`
+  h4 {
+    font-size: 3rem;
+    text-align: center;
+  }
+
+  p {
+    font-size: 2rem;
+    font-weight: bold;
+  }
+
+  span {
+    margin-top: 10px;
+    display: inline-block;
+    font-size: 2rem;
+    font-weight: bold;
+  }
+
+  ul {
+    margin-top: 10px;
+
+    li {
+      padding: 10px 0;
+      font-size: 2rem;
+      font-weight: bold;
+    }
+  }
+`;
 // export const Slider = styled.div``;
 
 export const SlideInfo = styled.div`

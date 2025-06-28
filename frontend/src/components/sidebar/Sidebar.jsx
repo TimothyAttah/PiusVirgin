@@ -1,10 +1,14 @@
-import React from 'react';
+/* eslint-disable react/prop-types */
 import * as Styles from './SidebarStyles';
-import navData from '../nav/navData';
-import { NavLink } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 import ChangeTheme from '../ChangeTheme';
+import {
+  FaFacebookSquare,
+  FaInstagramSquare,
+  FaWhatsappSquare,
+} from 'react-icons/fa';
 
-const Sidebar = () => {
+const Sidebar = ({ setOpenSidebar }) => {
   const showAnimation = {
     hidden: {
       opacity: 0,
@@ -27,6 +31,10 @@ const Sidebar = () => {
       },
     },
   };
+
+  const close = () => {
+    setOpenSidebar(false);
+  };
   return (
     <Styles.SidebarContainer
       variants={showAnimation}
@@ -37,16 +45,25 @@ const Sidebar = () => {
       <Styles.SidebarWrapper>
         <ChangeTheme />
         <ul>
-          {navData.mainNavData.map((nav, i) => (
-            <NavLink key={i}>{nav.navTitle}</NavLink>
-          ))}
+          <NavLink to='/about' onClick={close}>
+            <li>About Us</li>
+          </NavLink>
+          <NavLink to='/contact' onClick={close}>
+            <li>Contact Us</li>
+          </NavLink>
         </ul>
 
-        <ul>
-          {navData.primaryNavData.map((nav, i) => (
-            <NavLink key={i}>{nav.navTitle}</NavLink>
-          ))}
-        </ul>
+        <Styles.SidebarSocialIcons>
+          <Link onClick={close}>
+            <FaInstagramSquare />
+          </Link>
+          <Link onClick={close}>
+            <FaFacebookSquare />
+          </Link>
+          <Link onClick={close}>
+            <FaWhatsappSquare />
+          </Link>
+        </Styles.SidebarSocialIcons>
       </Styles.SidebarWrapper>
     </Styles.SidebarContainer>
   );

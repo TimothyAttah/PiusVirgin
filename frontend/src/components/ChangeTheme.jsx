@@ -1,8 +1,15 @@
-import React, { useEffect, useState } from 'react';
-import { CgSun } from 'react-icons/cg';
-import { HiMoon } from 'react-icons/hi';
+import { useEffect, useState } from 'react';
+import { FaMoon, FaSun } from 'react-icons/fa';
+import styled from 'styled-components';
 
-const ChangeTheme = ({ theme, setTheme }) => {
+const ChangeThemeContainer = styled.div`
+  svg {
+    font-size: 2.3rem;
+    cursor: pointer;
+  }
+`;
+
+const ChangeTheme = () => {
   const [night, setNight] = useState(true);
   const toggleThemeColor = () => {
     setNight(!night);
@@ -25,16 +32,16 @@ const ChangeTheme = ({ theme, setTheme }) => {
   };
 
   useEffect(() => {
-    changeColorTheme()
-  },[])
+    changeColorTheme();
+  }, []);
   return (
-    <div>
+    <ChangeThemeContainer>
       {night ? (
-        <HiMoon onClick={toggleThemeColor} />
+        <FaMoon onClick={toggleThemeColor} />
       ) : (
-        <CgSun onClick={toggleThemeColor} />
+        <FaSun onClick={toggleThemeColor} />
       )}
-    </div>
+    </ChangeThemeContainer>
   );
 };
 

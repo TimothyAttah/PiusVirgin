@@ -40,7 +40,7 @@ body {
   &::-webkit-scrollbar {
 		display: none;
 	}
-  border: 2px solid red;
+ /* border: 2px solid red; */
 }
 
 * {

@@ -7,7 +7,7 @@ export const SidebarContainer = styled(motion.div)`
   position: absolute;
   top: 0px;
   left: 0px;
-  background-color: green;
+  background: linear-gradient(139deg, blue 0%, red 90%);
   /* background-color: var(--bg-black-50); */
   z-index: 999;
   border-bottom-right-radius: 20px;
@@ -36,9 +36,21 @@ export const SidebarWrapper = styled.div`
 
     a {
       color: var(--text-color);
-      /* color: green; */
+      color: #fff;
       font-size: 2rem;
       text-transform: uppercase;
     }
   }
+`;
+
+export const SidebarSocialIcons = styled.div`
+  display: flex;
+  align-items: center;
+  gap: 20px;
+
+  a svg{
+    font-size: 25px;
+    color: #fff;
+  }
+
 `;
